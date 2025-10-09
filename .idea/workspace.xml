@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e849db6-a344-4b27-9fb3-6183f6003556" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/entity/Logo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/entity/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/repository/AboutRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/repository/LogoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/ContentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/QueryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/service/QueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/service/QueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/(main)/portfolio/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/(main)/portfolio/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/components/layout/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/lib/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/lib/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/admin/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/admin/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/admin/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/admin/login/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

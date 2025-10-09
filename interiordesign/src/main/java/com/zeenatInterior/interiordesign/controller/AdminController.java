@@ -24,9 +24,9 @@ public class AdminController {
     @Autowired
     private QueryService queryService;
 
-    // Content Management Endpoints
+    // ==================== CONTENT MANAGEMENT ====================
 
-    @PutMapping("/update-content")
+    @PutMapping("/content")
     public ResponseEntity<?> updateContent(@RequestBody Map<String, Object> contentData,
                                            @RequestHeader("Authorization") String token) {
         try {
@@ -37,8 +37,6 @@ public class AdminController {
             String section = (String) contentData.get("section");
             Object data = contentData.get("data");
 
-            // Yaha aap content update logic implement karenge
-            // Jaise database mein save karna ya file mein update karna
             adminService.updateContent(section, data);
 
             return ResponseEntity.ok(Map.of(
@@ -54,79 +52,23 @@ public class AdminController {
         }
     }
 
-    // Navbar Logo Update
-    @PutMapping("/navbar/logo")
-    public ResponseEntity<?> updateNavbarLogo(@RequestBody Map<String, String> logoData,
-                                              @RequestHeader("Authorization") String token) {
+    @GetMapping("/content")
+    public ResponseEntity<?> getContent(@RequestParam String section) {
         try {
-            if (!isValidAdminToken(token)) {
-                return ResponseEntity.status(401).body(Map.of("error", "Unauthorized"));
-            }
-
-            String logoUrl = logoData.get("logoUrl");
-            adminService.updateContent("navbarLogo", logoUrl);
-
+            Object content = adminService.getContent(section);
             return ResponseEntity.ok(Map.of(
-                    "success", true,
-                    "message", "Navbar logo updated successfully",
-                    "logoUrl", logoUrl
+                    "section", section,
+                    "data", content
             ));
-
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of(
-                    "error", "Failed to update logo: " + e.getMessage()
+                    "error", "Failed to get content: " + e.getMessage()
             ));
         }
     }
 
-    // About Us Content Update
-    @PutMapping("/about")
-    public ResponseEntity<?> updateAboutUs(@RequestBody Map<String, String> aboutData,
-                                           @RequestHeader("Authorization") String token) {
-        try {
-            if (!isValidAdminToken(token)) {
-                return ResponseEntity.status(401).body(Map.of("error", "Unauthorized"));
-            }
+    // ==================== CONTACT QUERIES ====================
 
-            String aboutText = aboutData.get("aboutText");
-            adminService.updateContent("aboutText", aboutText);
-
-            return ResponseEntity.ok(Map.of(
-                    "success", true,
-                    "message", "About us content updated successfully"
-            ));
-
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(Map.of(
-                    "error", "Failed to update about us: " + e.getMessage()
-            ));
-        }
-    }
-
-    // Contact Information Update
-    @PutMapping("/contact")
-    public ResponseEntity<?> updateContactInfo(@RequestBody Map<String, String> contactData,
-                                               @RequestHeader("Authorization") String token) {
-        try {
-            if (!isValidAdminToken(token)) {
-                return ResponseEntity.status(401).body(Map.of("error", "Unauthorized"));
-            }
-
-            adminService.updateContent("contactInfo", contactData);
-
-            return ResponseEntity.ok(Map.of(
-                    "success", true,
-                    "message", "Contact information updated successfully"
-            ));
-
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(Map.of(
-                    "error", "Failed to update contact info: " + e.getMessage()
-            ));
-        }
-    }
-
-    // Get All Contact Queries (Admin Panel ke liye)
     @GetMapping("/queries")
     public ResponseEntity<?> getAllQueries(@RequestHeader("Authorization") String token) {
         try {
@@ -144,7 +86,6 @@ public class AdminController {
         }
     }
 
-    // Delete Contact Query
     @DeleteMapping("/queries/{id}")
     public ResponseEntity<?> deleteQuery(@PathVariable Long id,
                                          @RequestHeader("Authorization") String token) {
@@ -163,51 +104,71 @@ public class AdminController {
         }
     }
 
-    // Get Current Content (Frontend ke liye)
-    @GetMapping("/content")
-    public ResponseEntity<?> getContent(@RequestParam String section) {
+    // ==================== SERVICES MANAGEMENT ====================
+
+    @PostMapping("/services")
+    public ResponseEntity<?> addService(@RequestBody Map<String, String> serviceData,
+                                        @RequestHeader("Authorization") String token) {
         try {
-            Object content = adminService.getContent(section);
+            if (!isValidAdminToken(token)) {
+                return ResponseEntity.status(401).body(Map.of("error", "Unauthorized"));
+            }
+
+            String title = serviceData.get("title");
+            String description = serviceData.get("description");
+            String icon = serviceData.get("icon");
+
+            Map<String, Object> service = new HashMap<>();
+            service.put("title", title);
+            service.put("description", description);
+            service.put("icon", icon);
+
+            adminService.addService(service);
+
             return ResponseEntity.ok(Map.of(
-                    "section", section,
-                    "data", content
+                    "success", true,
+                    "message", "Service added successfully"
             ));
 
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of(
-                    "error", "Failed to get content: " + e.getMessage()
+                    "error", "Failed to add service: " + e.getMessage()
             ));
         }
     }
 
-    // Admin Profile Update
-    @PutMapping("/profile")
-    public ResponseEntity<?> updateProfile(@RequestBody Map<String, String> profileData,
+    @DeleteMapping("/services/{id}")
+    public ResponseEntity<?> deleteService(@PathVariable String id,
                                            @RequestHeader("Authorization") String token) {
         try {
             if (!isValidAdminToken(token)) {
                 return ResponseEntity.status(401).body(Map.of("error", "Unauthorized"));
             }
 
-            String name = profileData.get("name");
-            String email = profileData.get("email");
-
-            Admin updatedAdmin = adminService.updateAdminProfile(name, email);
-
-            return ResponseEntity.ok(Map.of(
-                    "success", true,
-                    "message", "Profile updated successfully",
-                    "admin", updatedAdmin
-            ));
+            adminService.deleteService(id);
+            return ResponseEntity.ok(Map.of("message", "Service deleted successfully"));
 
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of(
-                    "error", "Failed to update profile: " + e.getMessage()
+                    "error", "Failed to delete service: " + e.getMessage()
             ));
         }
     }
 
-    // Token Validation Method
+    @GetMapping("/services")
+    public ResponseEntity<?> getAllServices() {
+        try {
+            List<Map<String, Object>> services = adminService.getAllServices();
+            return ResponseEntity.ok(services);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of(
+                    "error", "Failed to get services: " + e.getMessage()
+            ));
+        }
+    }
+
+    // ==================== TOKEN VALIDATION ====================
+
     private boolean isValidAdminToken(String token) {
         try {
             if (token == null || !token.startsWith("Bearer ")) {
@@ -218,7 +179,6 @@ public class AdminController {
             String decoded = new String(Base64.getDecoder().decode(actualToken));
             String[] parts = decoded.split(":");
 
-            // Token structure: email:timestamp:role
             return parts.length >= 3 && "admin".equals(parts[2]);
 
         } catch (Exception e) {
