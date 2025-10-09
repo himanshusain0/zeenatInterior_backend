@@ -1,7 +1,5 @@
 package com.zeenatInterior.interiordesign.security;
 
-//package com.yourcompany.interiordesign.security;
-
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;

@@ -13,10 +13,10 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*") // For dev; restrict in prod
+                .allowedOrigins("http://localhost:3000") // Frontend URL
                 .allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(false)
+                .allowCredentials(true)
                 .maxAge(3600);
     }
 
@@ -25,5 +25,8 @@ public class WebConfig implements WebMvcConfigurer {
         String location = "file:" + uploadDir + "/";
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations(location);
+
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("file:uploads/");
     }
 }

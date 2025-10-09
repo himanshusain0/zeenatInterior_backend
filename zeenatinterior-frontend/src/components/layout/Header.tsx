@@ -2,20 +2,48 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { authUtils } from '../../lib/auth'
+import { useState, useEffect } from 'react'
+import { contentService } from '../../lib/content-service'
 
 export default function Header() {
   const pathname = usePathname()
   const user = authUtils.getUser()
   const isAdmin = authUtils.isAdmin()
+  const [logo, setLogo] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetchLogo()
+  }, [])
+
+  const fetchLogo = async () => {
+    try {
+      const response = await contentService.getLogo()
+      setLogo(response.logoUrl)
+    } catch (error) {
+      console.error('Error fetching logo:', error)
+      // Agar logo nahi mila toh existing text hi rahega
+    }
+  }
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
+            {/* YAHAN LOGO KO DYNAMIC KARENGE */}
             <Link href="/" className="flex-shrink-0 font-bold text-xl text-gray-800">
-              Zeenat Interior
+              {logo ? (
+                <img 
+                  src={logo} 
+                  alt="Zeenat Interior" 
+                  className="h-10 object-contain" // Height adjust karo according to your design
+                />
+              ) : (
+                // Fallback - aapka existing text
+                "Zeenat Interior"
+              )}
             </Link>
+            
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link href="/" className={`px-3 py-2 text-sm font-medium ${pathname === '/' ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}`}>
                 Home

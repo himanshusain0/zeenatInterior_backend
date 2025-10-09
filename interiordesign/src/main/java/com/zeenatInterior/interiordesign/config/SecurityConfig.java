@@ -45,10 +45,11 @@ public class SecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()                  // Register/Login
+                        .requestMatchers("/api/admin/**").permitAll()                 // ✅ ADMIN ENDPOINTS ADDED - FIXED
                         .requestMatchers(HttpMethod.GET, "/api/services/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/queries/**").permitAll()
                         .requestMatchers("/api/content/**").permitAll()
-                        .requestMatchers("/uploads/**").permitAll()                  // Static files
+                        .requestMatchers("/uploads/**").permitAll()                   // Static files
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
@@ -79,7 +80,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:3000")); // apne frontend ka URL daalo
+        config.setAllowedOrigins(List.of("http://localhost:3000")); // Frontend URL
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);

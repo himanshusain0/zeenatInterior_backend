@@ -1,7 +1,5 @@
 package com.zeenatInterior.interiordesign.service;
 
-
-
 import com.zeenatInterior.interiordesign.dto.QueryDto;
 import com.zeenatInterior.interiordesign.entity.Query;
 import com.zeenatInterior.interiordesign.repository.QueryRepository;
@@ -25,6 +23,13 @@ public class QueryService {
                 .status("NEW")
                 .build();
         return repo.save(q);
+    }
+
+    public void deleteQuery(Long id) {
+        if (!repo.existsById(id)) { // ✅ 'repo' use karein, 'queryRepository' nahi
+            throw new RuntimeException("Query not found with id: " + id);
+        }
+        repo.deleteById(id); // ✅ 'repo' use karein
     }
 
     public List<Query> getAll() {

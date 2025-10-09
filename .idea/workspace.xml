@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e849db6-a344-4b27-9fb3-6183f6003556" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/A.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/entity/Logo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/entity/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/repository/AboutRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/repository/LogoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/ContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/QueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/controller/QueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/security/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/service/QueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/java/com/zeenatInterior/interiordesign/service/QueryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interiordesign/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/interiordesign/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/(main)/portfolio/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/app/(main)/portfolio/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/components/layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zeenatinterior-frontend/src/lib/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/zeenatinterior-frontend/src/lib/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,28 +40,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "himanshusain0"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;himanshusain0&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/himanshusain0/zeenatInterior_backend.git",
-    "accountId": "1dbe51db-5c83-4a7f-b2da-63d5c3d55a49"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/himanshusain0/zeenatInterior_backend.git&quot;,
+    &quot;accountId&quot;: &quot;1dbe51db-5c83-4a7f-b2da-63d5c3d55a49&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="33hmkiTc4rYmftGVeGZ5ws8Sxa0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.InteriordesignApplication.executor": "Run",
+    "Maven.interiordesign [clean].executor": "Run",
+    "Maven.interiordesign [install].executor": "Run",
+    "Maven.interiordesign [test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -58,6 +78,38 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.InteriordesignApplication">
+    <configuration name="InteriordesignApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zeenatInterior.interiordesign.InteriordesignApplication" />
+      <module name="interiordesign" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zeenatInterior.interiordesign.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="ms-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="interiordesign" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.InteriordesignApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.InteriordesignApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
